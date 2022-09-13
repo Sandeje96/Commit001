@@ -1,16 +1,20 @@
+
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Cinzel', serif;
     
 }
 .fondo {
-    background: linear-gradient(to bottom, hsl(340, 44%, 75%), hsl(207, 36%, 76%) );
+    background: linear-gradient(to bottom, hsl(207, 36%, 76%), hsl(339, 88%, 6%) );
 }
 
 /*Encabezado index*/
+.font-effect-3d-float{
+    color: #ffb2c0;
+}
 
 .encabezado {
     background-color: rgba(94, 76, 80, 0.1);
@@ -102,7 +106,7 @@ header a{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg,rgba(247, 172, 197, 0.8),rgba(158, 190, 216, 0.8));
+    background: linear-gradient(135deg,  hsl(339, 88%, 6%, 0.8), hsl(207, 36%, 76%, 0.8));
 }
 .videoTitulo{
     z-index: 0;
@@ -117,8 +121,80 @@ header a{
     font-size: 10vh;
 }
 .videoTitulo a{
+    position: relative;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 60px;
+    transition: 1s;
     text-decoration: none;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+
 }
+.videoTitulo a:hover{
+    background-color: #ffb2c0;
+    box-shadow: 0 0 10px #ffb2c0,
+    0 0 30px #ffb2c0,
+    0 0 60px #ffb2c0,
+    0 0 100px #ffb2c0;
+
+}
+.videoTitulo a::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 500%;
+    background: #ffb2c0;
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(0.33s);
+
+}
+.videoTitulo a:hover::before{
+    width: 120%;
+
+}
+@keyframes animate{
+    0% 
+    {
+        transform: rotate(0deg);
+    }
+    100% 
+    {
+        transform: rotate(360deg);
+    }
+}
+.videoTitulo a::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: linear-gradient(135deg,  hsl(339, 88%, 6%, 1), hsl(207, 36%, 76%, 1));
+    transition: 0.5s;
+}
+.videoTitulo a:hover::after{
+    background: #ffb2c0;
+
+}
+.videoTitulo a span{
+    position: relative;
+    z-index: 1;
+    font-size: 0.8em;
+    color: #fff;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.5s;
+
+}
+.videoTitulo a:hover span{
+    opacity: 1;
+
+
+}
+
 
 .novedades {
     display: flex;
@@ -155,7 +231,7 @@ header a{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 40px 0;
+    
 }
 .shop__conteiner .shop__card{
     position: relative;
