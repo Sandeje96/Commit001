@@ -21,16 +21,10 @@
 
 .encabezado {
     background-color: rgba(94, 76, 80, 0.1);
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    z-index: 1;
-    justify-content: space-between;
-    
     
 
 }
+
 .encabezadoLogo{
     display: flex;
     justify-content: center;
@@ -43,6 +37,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.conteiner__encabezado{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
 }
    
 
@@ -862,6 +863,20 @@ header a{
     flex-direction: column;
     align-items: center;
 }
+.shop__conteiner .shop__card{
+    position: relative;
+    width: 75px;
+    height: 118px;
+    margin: 18px 3px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(253, 253, 253, 0.9);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
 .mapa {
     display: flex;
     flex-direction: column;
@@ -880,6 +895,9 @@ header a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.conteiner__mapa p {
+    display: none;
 }
 .redes ul{
     flex-wrap: wrap;
@@ -920,5 +938,12 @@ header a{
 .contenedor__grid h3{
     font-size: 5vh;
 }
+}
+@media (min-width:768px) {
+    .encabezado__nuevo {
+        display: flex!important;
+        flex-basis: auto;
+        justify-content: space-evenly;
+    }
 }
 
